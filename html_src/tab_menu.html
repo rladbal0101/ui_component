@@ -1,61 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>탭 메뉴</title>
-</head>
-<body>
-
-<header class="header">
-  <nav class="gnb">
-    <ul class="gnb-depth1">
-      <li class="gnb-depth1-item">
-        <a href="#" class="gnb-depth1-link">탭메뉴</a>
-        <ul class="gnb-depth2">
-          <li class="gnb-depth2-item">
-            <a href="#" class="gnb-depth2-link">jQuery</a>
-          </li>
-          <li class="gnb-depth2-item">
-            <a href="#" class="gnb-depth2-link">CSS</a>
-          </li>
-        </ul>
-      </li>
-      <li class="gnb-depth1-item">
-        <a href="#" class="gnb-depth1-link">아코디언메뉴</a>
-        <ul class="gnb-depth2">
-          <li class="gnb-depth2-item">
-            <a href="#" class="gnb-depth2-link">jQuery</a>
-          </li>
-          <li class="gnb-depth2-item">
-            <a href="#" class="gnb-depth2-link">CSS</a>
-          </li>
-        </ul>
-      </li>
-      <li class="gnb-depth1-item">
-        <a href="#" class="gnb-depth1-link">상단메뉴</a>
-        <ul class="gnb-depth2">
-          <li class="gnb-depth2-item">
-            <a href="#" class="gnb-depth2-link">jQuery</a>
-          </li>
-          <li class="gnb-depth2-item">
-            <a href="#" class="gnb-depth2-link">CSS</a>
-          </li>
-        </ul>
-      </li>
-      <li class="gnb-depth1-item">
-        <a href="#" class="gnb-depth1-link">이미지 슬라이딩</a>
-        <ul class="gnb-depth2">
-          <li class="gnb-depth2-item">
-            <a href="#" class="gnb-depth2-link">jQuery</a>
-          </li>
-          <li class="gnb-depth2-item">
-            <a href="#" class="gnb-depth2-link">CSS</a>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </nav>
-</header>
+<!--=include _include/_header_tab_menu.html -->
 
 <section>
 
@@ -63,9 +6,11 @@
 
   <div class="tab-wrap">
 
-    <h2 class="tab-heading">HTML</h2>
+    <h2 class="tab-heading html">
+      <a href="#" class="on">HTML</a>
+    </h2>
 
-    <div class="tab-content">
+    <div class="tab-content on">
 
       <h2>HTML</h2>
       <hr />
@@ -136,7 +81,7 @@
       <table border="1">
         <tr>
           <td>
-            <img src="images/Tim_Berners-Lee.jpg">
+            <img src="../images/Tim_Berners-Lee.jpg">
             <p>팀 버너스리</p>
           </td>
         </tr>
@@ -690,7 +635,9 @@
 
     </div>
 
-    <h2 class="tab-heading">CSS</h2>
+    <h2 class="tab-heading css">
+      <a href="#">CSS</a>
+    </h2>
 
     <div class="tab-content">
 
@@ -993,11 +940,13 @@
 
     </div>
 
-    <h2 class="tab-heading">Javascript</h2>
+    <h2 class="tab-heading js">
+      <a href="#">Javascript</a>
+    </h2>
 
     <div class="tab-content">
 
-      <h1>자바스크립트</h1>
+      <h2>자바스크립트</h2>
       <hr />
       <p>위키백과, 우리 모두의 백과사전.</p>
       <p>
@@ -1191,7 +1140,4 @@
 
 </section>
 
-<footer></footer>
-
-</body>
-</html>
+<!--=include _include/_footer.html-->
