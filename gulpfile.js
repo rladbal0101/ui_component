@@ -2,7 +2,7 @@
  * Created by Administrator on 2017-07-03.
  */
 
-// º¯¼ö¼±¾ğ = require('¸ğµâÀÌ¸§');
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ = require('ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½');
 var gulp = require('gulp');
 var livereload = require('gulp-livereload');
 var include = require('gulp-include');
@@ -12,7 +12,7 @@ var sourcemaps = require('gulp-sourcemaps');
 var concat = require('gulp-concat');
 
 /*
-gulp.task (taskÀÌ¸§, ÇÔ¼ö/ÀÍ¸íÇÔ¼ö);
+gulp.task (taskï¿½Ì¸ï¿½, ï¿½Ô¼ï¿½/ï¿½Í¸ï¿½ï¿½Ô¼ï¿½);
 */
 
 gulp.task('hello1', function () {
@@ -28,15 +28,15 @@ gulp.task('hello3', function () {
 });
 
 
-// pipe() ´Â ¸ğµâÀÇ ±â´ÉÀ» ½ÇÇàÇØÁÖ´Â ÇÔ¼ö
+// pipe() ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ ï¿½Ô¼ï¿½
 
-// »õ·Î°íÄ§
+// ï¿½ï¿½ï¿½Î°ï¿½Ä§
 gulp.task('livereload', function(){
   gulp.src(['html/*', 'css/*', 'js/*', '*'])
       .pipe( livereload() );
 });
 
-// header, footer, °øÅë¿µ¿ª ºĞ¸®
+// header, footer, ï¿½ï¿½ï¿½ë¿µï¿½ï¿½ ï¿½Ğ¸ï¿½
 gulp.task('include', function(){
   gulp.src('html_src/*.html')
       .pipe(include())
@@ -44,7 +44,7 @@ gulp.task('include', function(){
       .pipe(gulp.dest("html/"));
 });
 
-// sass ½ÇÇà
+// sass ï¿½ï¿½ï¿½ï¿½
 gulp.task('sass', function(){
   return gulp.src('css_src/*.scss')
       .pipe(sourcemaps.init())
@@ -58,10 +58,10 @@ gulp.task('watch', function(){
   gulp.watch('*', ['livereload']);
   gulp.watch('html_src/**', ['include', 'livereload']);
   gulp.watch('css_src/**', ['sass', 'livereload']);
-  gulp.watch('js_src/**', ['tabmenu', 'livereload']);
+  gulp.watch('js_src/**', ['jsconcat', 'livereload']);
 });
 
-// concat ½ÇÇà - ¿©·¯°³ÀÇ ÆÄÀÏÀ» ÇÏ³ªÀÇ ÆÄÀÏ·Î ÇÕÄ¡´Â ±â´É
+// concat ì‹¤í–‰ - ì—¬ëŸ¬ ê°œì˜ íŒŒì¼ì„ í•˜ë‚˜ì˜ íŒŒì¼ë¡œ í•©ì¹˜ëŠ” ê¸°ëŠ¥
 
 gulp.task('tabmenu', function() {
   return gulp.src('js_src/tab_menu/*.js')
@@ -71,4 +71,13 @@ gulp.task('tabmenu', function() {
       .pipe(gulp.dest('js/'));
 });
 
-gulp.task('default', ['livereload', 'include', 'sass', 'tabmenu', 'watch'] );
+gulp.task('gnbmenu', function() {
+  return gulp.src('js_src/gnb_menu/*.js')
+      .pipe(sourcemaps.init())
+      .pipe(concat('gnb_menu.js'))
+      .pipe(sourcemaps.write())
+      .pipe(gulp.dest('js/'));
+});
+gulp.task('jsconcat', ['tabmenu','gnbmenu']);
+
+gulp.task('default', ['livereload', 'include', 'sass', 'jsconcat', 'watch'] );
