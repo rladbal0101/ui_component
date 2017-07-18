@@ -1,72 +1,162 @@
+/* jQuery 이미지 슬라이딩 */
+.js-sliding{
+  .rolling{
+    width:400px;
+    position:relative;
+    left:50%;
+    margin-left:-200px;
+  }
 
-.rolling{
-  width:400px;
-  position:relative;
-  left:50%;
-  margin-left:-200px;
+  .view{
+    width:400px;
+    height:300px;
+    overflow:hidden;
+    position:relative;
+  }
+
+  .view-image{
+    display:block;
+    position:absolute;
+    top:0;
+    left:0;
+  }
+
+  .arrow-wrap{
+    width:100%;
+    position:absolute;
+    top:50%;
+    margin-top:-15px;
+    left:0;
+  }
+
+  .arrow{
+    display:block;
+    width:30px;
+    height:30px;
+    border:0;
+    background:url("../images/arrow-sprite.png") no-repeat;
+    text-indent:-99999em;
+    cursor:pointer;
+    position:absolute;
+    top:0;
+    left:0;
+  }
+
+  .arrow.right{
+    background-position:-31px 0;
+    left:auto;
+    right:0;
+  }
+
+  .control-wrap{
+    position:absolute;
+    left:50%;
+  }
+
+  .control-wrap:after{
+    content:"";
+    display:block;
+    clear:both;
+  }
+
+  .paging,
+  .play-wrap{
+    float:left;
+    margin:0;
+    padding:0;
+  }
+
+  .paging-item{
+    float:left;
+    list-style-type:none;
+    margin-right:10px;
+  }
 }
 
-.view{
-  width:400px;
-  height:300px;
-  overflow:hidden;
-  position:relative;
-}
+/* CSS 이미지 슬라이딩 */
+.css-sliding{
 
-.view-image{
-  display:block;
-  position:absolute;
-  top:0;
-  left:0;
-}
+  &-rolling{
+    width:400px;
+    position:relative;
+    left:50%;
+    margin-left:-200px;
+  }
 
-.arrow-wrap{
-  width:100%;
-  position:absolute;
-  top:50%;
-  margin-top:-15px;
-  left:0;
-}
+  &-view{
+    width:400px;
+    height:300px;
+    overflow:hidden;
+    position:relative;
+  }
 
-.arrow{
-  display:block;
-  width:30px;
-  height:30px;
-  border:0;
-  background:url("../images/arrow-sprite.png") no-repeat;
-  text-indent:-99999em;
-  cursor: pointer;
-  position:absolute;
-  top:0;
-  left:0;
-}
+  &-view-image{
+    display:block;
+    position:absolute;
 
-.arrow.right{
-  background-position:-31px 0;
-  left:auto;  /* 해제(위에 적용된 left:0 이 해제됨) */
-  right:0;
-}
+    &.left{
+      transform:translate(-100%,0);
+    }
 
-.control-wrap{
-  position:absolute;
-  left:50%;
-}
+    &.center{
+      transform:translate(0,0);
+    }
 
-.control-wrap:after{
-  content:"";
-  display:block;
-  clear:both;
-}
+    &.right{
+      transform:translate(100%,0);
+    }
 
-.paging,
-.play-wrap{
-  float:left;
-  margin:0;
-  padding:0;
-}
+    &.ani{
+      transition:transform 1s ease-out;
+    }
 
-.paging-item{
-  float:left;
-  list-style-type:none;
-  margin-right:10px;
+
+  }
+
+  &-arrow-wrap{
+    width:100%;
+    position:absolute;
+    top:50%;
+    margin-top:-15px;
+    left:0;
+  }
+
+  &-arrow{
+    display:block;
+    width:30px;
+    height:30px;
+    border:0;
+    background:url("../images/arrow-sprite.png") no-repeat;
+    text-indent:-99999em;
+    cursor:pointer;
+    position:absolute;
+    top:0;
+    left:0;
+  }
+
+  &-arrow.right{
+    background-position:-31px 0;
+    left:auto;
+    right:0;
+  }
+
+  &-control-wrap{
+    position:absolute;
+    left:50%;
+
+    @extend %clearfix;
+  }
+
+  &-paging,
+  &-play-wrap{
+    float:left;
+    margin:0;
+    padding:0;
+  }
+
+  &-paging-item{
+    float:left;
+    list-style-type:none;
+    margin-right:10px;
+  }
 }

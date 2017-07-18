@@ -1,13 +1,14 @@
 /**
- * Image Sliding jQuery
+ * Image Sliding Jquery
  */
 
 $(function(){
+
   // 선언부
   function init(){
-    $('.view-image').eq(0).css({left:0});
-    $('.view-image').eq(1).css({left:400});
-    $('.view-image').eq(2).css({left:-400});
+    $('.js-sliding .view-image').eq(0).css({left : 0});
+    $('.js-sliding .view-image').eq(1).css({left : 400});
+    $('.js-sliding .view-image').eq(2).css({left : -400});
 
     marginCtrlWrap();
     paging();
@@ -19,23 +20,24 @@ $(function(){
   var checkID;
 
   function moveLeft(){
-    if(nextIndex >= $('.view-image').length){
+    if(nextIndex >= $('.js-sliding .view-image').length){
       nextIndex = 0;
     }
-    $('.view-image').eq(currentIndex).stop().animate({left:-400}, 2000, 'easeOutBounce');
-    $('.view-image').eq(nextIndex).css({left:400}).stop().animate({left:0}, 2000, 'easeOutBounce');
+    $('.js-sliding .view-image').eq(currentIndex).stop().animate({left:-400}, 2000, 'easeOutBounce');
+    $('.js-sliding .view-image').eq(nextIndex).css({left:400}).stop().animate({left:0}, 2000, 'easeOutBounce');
     currentIndex = nextIndex;
-    nextIndex ++;
+    nextIndex++;
   }
 
   function moveRight(){
     if(nextIndex <= -1){
       nextIndex = $('.view-image').length-1;
     }
-    $('.view-image').eq(currentIndex).stop().animate({left:400}, 2000, 'easeOutBounce');
-    $('.view-image').eq(nextIndex).css({left:-400}).stop().animate({left:0}, 2000, 'easeOutBounce');
+    $('.js-sliding .view-image').eq(currentIndex).stop().animate({left:400}, 2000, 'easeOutBounce');
+    $('.js-sliding .view-image').eq(nextIndex).css({left:-400}).stop().animate({left:0}, 2000, 'easeOutBounce');
+
     currentIndex = nextIndex;
-    nextIndex --;
+    nextIndex--;
   }
 
   function autoRolling(){
@@ -46,37 +48,34 @@ $(function(){
   }
 
   function marginCtrlWrap(){
-    var wrapWidth = $('.control-wrap').width();
-    $('.control-wrap').css({
-      'margin-left' : -(wrapWidth / 2)
+
+    var wrapWidth = $('.js-sliding .control-wrap').width();
+
+    $('.js-sliding .control-wrap').css({
+      'margin-left' : -( wrapWidth / 2 )
     });
+
   }
 
   function paging(){
 
-    var imgNumber = $('.view-image').length; // size() :  개수 구하는 함수
+    var imgNumber = $('.js-sliding .view-image').length; // size() 개수 구하는 함수
+
     for(var i=0; i<imgNumber; i++){
 
-      $('.paging').append('<li class="paging-item"><a href="#" class="paging-link">' + (i+1) + '</a></li>');
+      $('.js-sliding .paging').append('<li class="paging-item"><a href="#" class="paging-link">' + (i+1) + '</a></li>');
 
     }
 
   }
 
-  function clickPaging(){
-
-  }
-
   // 실행부
   init();
-
-      autoRolling();
-
+  autoRolling();
 
   $('.arrow.right').on('click', function(){
-
-    clearInterval(timeID);
-    clearInterval(checkID);
+    clearInterval( timeID );
+    clearInterval( checkID );
     var count = 0;
     checkID = setInterval(function(){
       if(count == 5){
@@ -86,7 +85,6 @@ $(function(){
       console.log(count);
       count++;
     }, 1000);
-
     nextIndex = currentIndex + 1;
     if( !$('.view-image').is(':animated') ){
       moveLeft();
@@ -94,8 +92,8 @@ $(function(){
   });
 
   $('.arrow.left').on('click', function(){
-    clearInterval(timeID);
-    clearInterval(checkID);
+    clearInterval( timeID );
+    clearInterval( checkID );
     var count = 0;
     checkID = setInterval(function(){
       if(count == 5){
@@ -126,11 +124,13 @@ $(function(){
   $(document).on('click', '.paging-item', function(e){
 
     e.preventDefault();
+
     var indexNumber = $(this).index('.paging-item');
 
     if( currentIndex != indexNumber ){
 
       if( currentIndex == 0 ){
+
         if( indexNumber == $('.view-image').length-1 ){
           nextIndex = currentIndex - 1;
           if( !$('.view-image').is(':animated') ){
@@ -143,33 +143,38 @@ $(function(){
           }
         }
 
-      } else if( currentIndex == $('.view-image').length-1 ) {
+      } else if( currentIndex == $('.view-image').length-1 ){
 
-        if (indexNumber == 0) {
+        if( indexNumber == 0 ){
           nextIndex = currentIndex + 1;
-          if (!$('.view-image').is(':animated')) {
+          if( !$('.view-image').is(':animated') ){
             moveLeft();
           }
         } else {
           nextIndex = currentIndex - 1;
-          if (!$('.view-image').is(':animated')) {
+          if( !$('.view-image').is(':animated') ){
             moveRight();
           }
         }
 
       } else {
-        if (currentIndex < indexNumber) {
+
+        if( currentIndex < indexNumber ){
           nextIndex = currentIndex + 1;
-          if (!$('.view-image').is(':animated')) {
+          if( !$('.view-image').is(':animated') ){
             moveLeft();
           }
         } else {
           nextIndex = currentIndex - 1;
-          if (!$('.view-image').is(':animated')) {
+          if( !$('.view-image').is(':animated') ){
             moveRight();
           }
         }
+
       }
+
     }
+
   });
+
 });
