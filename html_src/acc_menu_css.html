@@ -1,105 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>아코디언 메뉴</title>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:900" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style_acc_menu.css"/>
-  <script src="../js/lib/jquery-3.2.1.min.js" ></script>
-  <script src="../js/acc_menu.js"></script>
-</head>
-<body>
+<!--=include _include/_header_accordion.html -->
+<!--=include _include/_gnb.html -->
 
-
-<header class="header">
-  <div class="util">
-    <div class="util-menu">
-      <a href="timing_function.html" class="util-link">가속/감속</a>
-    </div>
-  </div>
-  <nav class="gnb">
-    <ul class="gnb-depth1">
-      <li class="gnb-depth1-item">
-        <a href="#" class="gnb-depth1-link">탭메뉴</a>
-        <ul class="gnb-depth2">
-          <li class="gnb-depth2-item"><a href="tab_menu_jquery.html" class="gnb-depth2-link">jQuery</a></li>
-          <li class="gnb-depth2-item"><a href="tab_menu_css.html" class="gnb-depth2-link">CSS</a></li>
-        </ul>
-      </li>
-      <li class="gnb-depth1-item">
-        <a href="#" class="gnb-depth1-link">아코디언메뉴</a>
-        <ul class="gnb-depth2">
-          <li class="gnb-depth2-item"><a href="acc_menu_jquery.html" class="gnb-depth2-link">jQuery</a></li>
-          <li class="gnb-depth2-item"><a href="acc_menu_css.html" class="gnb-depth2-link">CSS</a></li>
-        </ul>
-      </li>
-      <li class="gnb-depth1-item">
-        <a href="#" class="gnb-depth1-link">상단메뉴</a>
-        <ul class="gnb-depth2">
-          <li class="gnb-depth2-item"><a href="gnb_jquery.html" class="gnb-depth2-link">jQuery</a></li>
-          <li class="gnb-depth2-item"><a href="gnb_css.html" class="gnb-depth2-link">CSS</a></li>
-        </ul>
-      </li>
-      <li class="gnb-depth1-item">
-        <a href="#" class="gnb-depth1-link">이미지 슬라이딩</a>
-        <ul class="gnb-depth2">
-          <li class="gnb-depth2-item"><a href="image_sliding_jquery.html" class="gnb-depth2-link">jQuery</a></li>
-          <li class="gnb-depth2-item"><a href="image_sliding_css.html" class="gnb-depth2-link">CSS</a></li>
-        </ul>
-      </li>
-    </ul>
-  </nav>
-</header>
-
-<h1 class="cate-heading">아코디언 메뉴 - jQuery</h1>
+<h1 class="cate-heading">아코디언 메뉴 - CSS</h1>
 
 <div class="content-wrap">
 
-  <nav class="lnb">
+  <nav class="css-lnb">
 
-    <ol class="lnb-depth1">
-      <li class="lnb-depth1-item">
-        <a href="#" class="lnb-depth1-link sub">역사</a>
-        <ol class="lnb-depth2">
-          <li class="lnb-depth2-item"><a href="#" class="lnb-depth2-link">개발</a></li>
-          <li class="lnb-depth2-item"><a href="#" class="lnb-depth2-link">최초 규격</a></li>
-          <li class="lnb-depth2-item"><a href="#" class="lnb-depth2-link">표준 버전의 역사</a></li>
+    <ol class="css-lnb-depth1">
+      <li class="css-lnb-depth1-item">
+        <a href="#" class="css-lnb-depth1-link sub">역사</a>
+        <ol class="css-lnb-depth2">
+          <li class="css-lnb-depth2-item"><a href="#" class="css-lnb-depth2-link">개발</a></li>
+          <li class="css-lnb-depth2-item"><a href="#" class="css-lnb-depth2-link">최초 규격</a></li>
+          <li class="css-lnb-depth2-item"><a href="#" class="css-lnb-depth2-link">표준 버전의 역사</a></li>
         </ol>
       </li>
 
-      <li class="lnb-depth1-item">
-        <a href="#" class="lnb-depth1-link sub">마크업</a>
-        <ol class="lnb-depth2">
-          <li class="lnb-depth2-item"><a href="#" class="lnb-depth2-link">HTML 요소</a></li>
-          <li class="lnb-depth2-item"><a href="#" class="lnb-depth2-link">데이터 형식</a></li>
+      <li class="css-lnb-depth1-item">
+        <a href="#" class="css-lnb-depth1-link sub">마크업</a>
+        <ol class="css-lnb-depth2">
+          <li class="css-lnb-depth2-item"><a href="#" class="css-lnb-depth2-link">HTML 요소</a></li>
+          <li class="css-lnb-depth2-item"><a href="#" class="css-lnb-depth2-link">데이터 형식</a></li>
         </ol>
       </li>
 
-      <li class="lnb-depth1-item">
-        <a href="#" class="lnb-depth1-link">시맨틱웹</a>
+      <li class="css-lnb-depth1-item">
+        <a href="#" class="css-lnb-depth1-link">시맨틱웹</a>
       </li>
 
-      <li class="lnb-depth1-item">
-        <a href="#" class="lnb-depth1-link sub">전송</a>
-        <ol class="lnb-depth2">
-          <li class="lnb-depth2-item"><a href="#" class="lnb-depth2-link">HTTP</a></li>
-          <li class="lnb-depth2-item"><a href="#" class="lnb-depth2-link">HTML 전자 우편</a></li>
-          <li class="lnb-depth2-item"><a href="#" class="lnb-depth2-link">명명 규칙</a></li>
-          <li class="lnb-depth2-item"><a href="#" class="lnb-depth2-link">HTML 애플리케이션</a></li>
+      <li class="css-lnb-depth1-item">
+        <a href="#" class="css-lnb-depth1-link sub">전송</a>
+        <ol class="css-lnb-depth2">
+          <li class="css-lnb-depth2-item"><a href="#" class="css-lnb-depth2-link">HTTP</a></li>
+          <li class="css-lnb-depth2-item"><a href="#" class="css-lnb-depth2-link">HTML 전자 우편</a></li>
+          <li class="css-lnb-depth2-item"><a href="#" class="css-lnb-depth2-link">명명 규칙</a></li>
+          <li class="css-lnb-depth2-item"><a href="#" class="css-lnb-depth2-link">HTML 애플리케이션</a></li>
         </ol>
       </li>
 
-      <li class="lnb-depth1-item">
-        <a href="#" class="lnb-depth1-link">위지위그 편집기</a></li>
+      <li class="css-lnb-depth1-item">
+        <a href="#" class="css-lnb-depth1-link">위지위그 편집기</a></li>
 
-      <li class="lnb-depth1-item">
-        <a href="#" class="lnb-depth1-link">같이보기</a></li>
+      <li class="css-lnb-depth1-item">
+        <a href="#" class="css-lnb-depth1-link">같이보기</a></li>
 
-      <li class="lnb-depth1-item">
-        <a href="#" class="lnb-depth1-link">참조</a></li>
+      <li class="css-lnb-depth1-item">
+        <a href="#" class="css-lnb-depth1-link">참조</a></li>
 
-      <li class="lnb-depth1-item">
-        <a href="#" class="lnb-depth1-link">바깥고리</a></li>
+      <li class="css-lnb-depth1-item">
+        <a href="#" class="css-lnb-depth1-link">바깥고리</a></li>
     </ol>
 
   </nav>
@@ -147,11 +97,4 @@
   </section>
 </div>
 
-<footer></footer>
-
-
-
-</body>
-
-</html>
-
+<!--=include _include/_footer.html-->
